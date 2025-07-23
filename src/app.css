@@ -1,1 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 @import 'tailwindcss';
+
+@font-face {
+	font-family: Pixel;
+	font-style: normal;
+	font-display: swap;
+	src: url('/fonts/pixel-emulator.woff2') format('woff2');
+}
+
+@theme {
+	--font-pixel: 'Pixel', sans-serif;
+	--font-space: 'Space Grotesk', sans-serif;
+
+	--color-primary: #06c038;
+	--color-secondary: #a475ff;
+}
+
+@layer base {
+	* {
+		box-sizing: border-box;
+	}
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	span,
+	a {
+		font-family: var(--font-space);
+		color: white;
+	}
+}
+
+@layer components {
+	.angled-card-wrapper {
+		@apply overflow-hidden;
+		clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+	}
+
+	.angled-card {
+		@apply h-full;
+		clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+	}
+
+	.particle-container {
+		position: absolute;
+		inset: 0;
+		overflow: hidden;
+		pointer-events: none;
+		z-index: 50;
+	}
+
+	.particleflake {
+		object-fit: contain;
+		user-select: none;
+		pointer-events: none;
+		/* filter: brightness(0) saturate(100%) invert(15%) sepia(95%) saturate(5000%) hue-rotate(275deg)
+			brightness(95%) contrast(105%);
+		mix-blend-mode: lighten; */
+		opacity: 0.2;
+	}
+
+	.mask-fade-y {
+		mask-image: linear-gradient(to bottom, white 0%, white 60%, transparent 100%);
+		-webkit-mask-image: linear-gradient(to bottom, white 0%, white 60%, transparent 100%);
+	}
+}
