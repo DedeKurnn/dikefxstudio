@@ -55,7 +55,7 @@
 	</section>
 	<enhanced:img
 		src="$lib/assets/images/668.webp"
-		alt="Hero Image"
+		alt="Hero"
 		class="absolute inset-0 -z-50 h-full w-full object-cover"
 		draggable="false"
 	/>
@@ -95,7 +95,7 @@
 	</div>
 	<enhanced:img
 		src="$lib/assets/images/618.webp"
-		alt="Hero Image"
+		alt="Hero"
 		class="absolute inset-0 -z-50 h-full w-full object-cover"
 		draggable="false"
 	/>
@@ -249,7 +249,7 @@
 
 	<enhanced:img
 		src="$lib/assets/images/660.webp"
-		alt="Hero Image"
+		alt="Hero"
 		class="absolute inset-0 -z-50 h-full w-full object-cover"
 		draggable="false"
 	/>
@@ -296,7 +296,7 @@
 		<div class="grid grid-cols-1 place-items-center gap-12 md:grid-cols-3">
 			<enhanced:img
 				src="$lib/assets/images/586.png"
-				alt="Call to Action Image"
+				alt="Call to Action"
 				class="z-0 col-span-1 w-full object-cover"
 				draggable="false"
 				width="845"

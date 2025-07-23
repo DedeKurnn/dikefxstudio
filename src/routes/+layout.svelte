@@ -1,6 +1,8 @@
 <script lang="ts">
 	import '../app.css';
+	import { page } from '$app/state';
 	import { Navbar, Footer } from '$lib/components';
+	import { locales, localizeHref } from '$lib/paraglide/runtime';
 
 	let { children } = $props();
 </script>
@@ -8,3 +10,9 @@
 <Navbar />
 {@render children()}
 <Footer />
+
+<div style="display:none">
+	{#each locales as locale}
+		<a href={localizeHref(page.url.pathname, { locale })}>{locale}</a>
+	{/each}
+</div>
