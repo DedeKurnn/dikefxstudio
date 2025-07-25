@@ -7,6 +7,7 @@
 	import { animateOnScroll } from '$lib/helper';
 	import { AngledContainer, MarqueScroller, ParticleEmitter, StatCounter } from '$lib/components';
 	import { faqs, featuredOne, featuredTwo } from '$lib/constants';
+	import { slide } from 'svelte/transition';
 
 	let openIndex = $state<number | null>(null);
 
@@ -59,6 +60,7 @@
 		class="absolute inset-0 -z-50 h-full w-full object-cover"
 		draggable="false"
 	/>
+
 	<div class="absolute inset-0 -z-50 bg-gradient-to-b from-neutral-950/25 to-neutral-950 to-90%">
 		<ParticleEmitter />
 	</div>
@@ -70,19 +72,19 @@
 	<div id="featured" class="container mx-auto max-w-7xl px-4">
 		<div class="flex w-full items-start justify-between"></div>
 		<div class="grid grid-cols-1 place-items-center gap-12 md:grid-cols-4">
-			<div class="col-span-1">
+			<div class="col-span-1 md:col-span-2 lg:col-span-1">
 				<h2 class="font-pixel text-secondary text-3xl sm:text-5xl">FEATURED WORKS</h2>
 				<p class="mt-4 text-sm sm:text-base">
 					Here's a glimpse of the quality<br />creativity we deliver over the years.
 				</p>
 			</div>
-			<div class="col-span-3">
+			<div class="col-span-2 lg:col-span-3">
 				<MarqueScroller images={featuredOne} direction="left" />
 			</div>
-			<div class="col-span-3">
+			<div class="col-span-2 lg:col-span-3">
 				<MarqueScroller images={featuredTwo} direction="right" />
 			</div>
-			<div>
+			<div class="col-span-1 md:col-span-2 lg:col-span-1">
 				<p class="font-pixel text-3xl text-white sm:text-5xl">CRAVING FOR MORE?</p>
 				<a
 					href="/"
@@ -283,7 +285,7 @@
 						</div>
 					</button>
 					{#if openIndex === i}
-						<p class="mt-4 text-sm text-neutral-300 sm:text-base">{faq.answer}</p>
+						<p class="mt-4 text-sm text-neutral-300 sm:text-base" transition:slide>{faq.answer}</p>
 					{/if}
 				</div>
 			</AngledContainer>
@@ -325,9 +327,9 @@
 		</div>
 	</div>
 
-	<div
-		class="absolute inset-0 -z-50 bg-gradient-to-t from-[#2A185C]/100 to-neutral-950/50 to-50%"
-	></div>
+	<div class="absolute inset-0 -z-50 bg-gradient-to-t from-[#2A185C]/100 to-neutral-950/50 to-50%">
+		<ParticleEmitter direction="up" particleSrc="/ender.png" />
+	</div>
 </section>
 
 <!-- END OF CTA -->

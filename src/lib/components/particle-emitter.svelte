@@ -1,34 +1,84 @@
 <script lang="ts">
 	import { gsap } from 'gsap';
 
-	const PARTICLE_COUNT = 80;
-	const particleSrc = '/smoke.png';
+	let {
+		direction = 'down',
+		particleSrc = '/smoke.png',
+		count = 80
+	} = $props<{
+		direction?: 'down' | 'up' | 'left' | 'right';
+		particleSrc?: string;
+		count?: number;
+	}>();
+
 	let container: HTMLElement;
+	let maskClass = `mask-fade-${direction}`;
 
 	$effect(() => {
 		if (!container) return;
 
 		container.innerHTML = '';
 
-		for (let i = 0; i < PARTICLE_COUNT; i++) {
+		for (let i = 0; i < count; i++) {
 			const flake = document.createElement('img');
 			flake.src = particleSrc;
 			flake.className = 'particleflake';
 
-			const flakeWidth = gsap.utils.random(8, 16);
-			const containerWidth = container.offsetWidth;
+			const flakeSize = gsap.utils.random(8, 16);
+			const width = container.offsetWidth;
+			const height = container.offsetHeight;
 
 			flake.style.position = 'absolute';
-			flake.style.width = `${flakeWidth}px`;
-			flake.style.left = `${gsap.utils.random(0, containerWidth - flakeWidth)}px`;
-			flake.style.top = `${gsap.utils.random(-100, 0)}px`;
+			flake.style.width = `${flakeSize}px`;
+
+			// Set initial position based on direction
+			switch (direction) {
+				case 'down':
+					flake.style.left = `${gsap.utils.random(0, width - flakeSize)}px`;
+					flake.style.top = `${gsap.utils.random(-100, 0)}px`;
+					break;
+				case 'up':
+					flake.style.left = `${gsap.utils.random(0, width - flakeSize)}px`;
+					flake.style.top = `${height + gsap.utils.random(0, 100)}px`;
+					break;
+				case 'left':
+					flake.style.left = `${width + gsap.utils.random(0, 100)}px`;
+					flake.style.top = `${gsap.utils.random(0, height - flakeSize)}px`;
+					break;
+				case 'right':
+					flake.style.left = `${-gsap.utils.random(0, 100)}px`;
+					flake.style.top = `${gsap.utils.random(0, height - flakeSize)}px`;
+					break;
+			}
 
 			container.appendChild(flake);
 
-			// Fall animation
+			// Animate based on direction
+			let x: string | number = 0;
+			let y: string | number = 0;
+
+			switch (direction) {
+				case 'down':
+					y = height + 100;
+					x = `+=${gsap.utils.random(-50, 50)}`;
+					break;
+				case 'up':
+					y = -height - 100;
+					x = `+=${gsap.utils.random(-50, 50)}`;
+					break;
+				case 'left':
+					x = -width - 100;
+					y = `+=${gsap.utils.random(-50, 50)}`;
+					break;
+				case 'right':
+					x = width + 100;
+					y = `+=${gsap.utils.random(-50, 50)}`;
+					break;
+			}
+
 			gsap.to(flake, {
-				y: container.offsetHeight + 100,
-				x: `+=${gsap.utils.random(-50, 50)}`,
+				x,
+				y,
 				opacity: gsap.utils.random(0.4, 0.9),
 				duration: gsap.utils.random(6, 12),
 				delay: gsap.utils.random(0, 4),
@@ -36,7 +86,6 @@
 				repeat: -1
 			});
 
-			// Continuous rotation animation
 			gsap.to(flake, {
 				rotation: gsap.utils.random([-360, 360]),
 				duration: gsap.utils.random(6, 12),
@@ -47,4 +96,4 @@
 	});
 </script>
 
-<div bind:this={container} class="particle-container mask-fade-y"></div>
+<div bind:this={container} class={['particle-container', maskClass]}></div>

@@ -58,14 +58,56 @@
 		object-fit: contain;
 		user-select: none;
 		pointer-events: none;
-		/* filter: brightness(0) saturate(100%) invert(15%) sepia(95%) saturate(5000%) hue-rotate(275deg)
-			brightness(95%) contrast(105%);
-		mix-blend-mode: lighten; */
 		opacity: 0.2;
 	}
 
-	.mask-fade-y {
+	.mask-fade-up {
+		mask-image: linear-gradient(to top, white 0%, white 60%, transparent 100%);
+		-webkit-mask-image: linear-gradient(to top, white 0%, white 60%, transparent 100%);
+	}
+
+	.mask-fade-down {
 		mask-image: linear-gradient(to bottom, white 0%, white 60%, transparent 100%);
 		-webkit-mask-image: linear-gradient(to bottom, white 0%, white 60%, transparent 100%);
+	}
+
+	.mask-fade-left {
+		mask-image: linear-gradient(to left, white 0%, white 60%, transparent 100%);
+		-webkit-mask-image: linear-gradient(to left, white 0%, white 60%, transparent 100%);
+	}
+
+	.mask-fade-right {
+		mask-image: linear-gradient(to right, white 0%, white 60%, transparent 100%);
+		-webkit-mask-image: linear-gradient(to right, white 0%, white 60%, transparent 100%);
+	}
+
+	@keyframes shine {
+		0% {
+			transform: translateX(-100%);
+		}
+		83.33% {
+			transform: translateX(-100%);
+		}
+		100% {
+			transform: translateX(100%);
+		}
+	}
+
+	.shine-effect {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 150%;
+		height: 100%;
+		background: linear-gradient(
+			120deg,
+			transparent 30%,
+			rgba(255, 255, 255, 0.4) 50%,
+			transparent 70%
+		);
+		animation: shine 8s infinite linear;
+		mix-blend-mode: overlay;
+		pointer-events: none;
+		overflow: hidden;
 	}
 }
