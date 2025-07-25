@@ -71,8 +71,8 @@
 		<div class="flex w-full items-start justify-between"></div>
 		<div class="grid grid-cols-1 place-items-center gap-12 md:grid-cols-4">
 			<div class="col-span-1">
-				<h2 class="font-pixel text-secondary text-5xl">FEATURED WORKS</h2>
-				<p class="mt-4">
+				<h2 class="font-pixel text-secondary text-3xl sm:text-5xl">FEATURED WORKS</h2>
+				<p class="mt-4 text-sm sm:text-base">
 					Here's a glimpse of the quality<br />creativity we deliver over the years.
 				</p>
 			</div>
@@ -83,7 +83,7 @@
 				<MarqueScroller images={featuredTwo} direction="right" />
 			</div>
 			<div>
-				<p class="font-pixel text-5xl text-white">CRAVING FOR MORE?</p>
+				<p class="font-pixel text-3xl text-white sm:text-5xl">CRAVING FOR MORE?</p>
 				<a
 					href="/"
 					class="bg-primary hover:bg-secondary font-space mt-8 flex w-fit items-center gap-2 px-6 py-4 text-sm font-bold text-neutral-950 transition-all sm:text-base"
@@ -108,8 +108,8 @@
 <!-- WHAT WE DO -->
 <section id="services" class="container mx-auto max-w-7xl px-4 py-40">
 	<div class="text-center">
-		<h2 class="font-pixel text-primary text-5xl">WHAT WE CREATE</h2>
-		<p class="mt-4">
+		<h2 class="font-pixel text-primary text-3xl sm:text-5xl">WHAT WE CREATE</h2>
+		<p class="mt-4 text-sm sm:text-base">
 			From stunning visuals to fully-featured servers, we bring your Minecraft vision to life.
 		</p>
 	</div>
@@ -124,8 +124,8 @@
 					width="337"
 					height="337"
 				/>
-				<p class="font-pixel text-xl">CUSTOM SERVER</p>
-				<p class="mt-2 text-neutral-400">
+				<p class="font-pixel text-lg sm:text-xl">CUSTOM SERVER</p>
+				<p class="mt-2 text-sm text-neutral-400 sm:text-base">
 					Full server setups with plugins, worlds, and custom gameplay.
 				</p>
 			</div>
@@ -140,8 +140,8 @@
 					width="337"
 					height="337"
 				/>
-				<p class="font-pixel text-xl">DESIGN</p>
-				<p class="mt-2 text-neutral-400">
+				<p class="font-pixel text-lg sm:text-xl">DESIGN</p>
+				<p class="mt-2 text-sm text-neutral-400 sm:text-base">
 					3D renders of characters, thumbnails, banner, scenes, and more.
 				</p>
 			</div>
@@ -156,8 +156,8 @@
 					width="337"
 					height="337"
 				/>
-				<p class="font-pixel text-xl">WEBSITES</p>
-				<p class="mt-2 text-neutral-400">
+				<p class="font-pixel text-lg sm:text-xl">WEBSITES</p>
+				<p class="mt-2 text-sm text-neutral-400 sm:text-base">
 					Complete integrated dedicated website of your server for donation and store.
 				</p>
 			</div>
@@ -170,13 +170,15 @@
 <section id="testimonials" class="relative w-full">
 	<div class="container mx-auto max-w-7xl px-4 py-40">
 		<div class="text-center">
-			<h2 class="font-pixel text-primary text-5xl">WHAT OUR CLIENTS SAY</h2>
-			<p class="mt-4">We're proud to have worked with so many amazing creators.</p>
+			<h2 class="font-pixel text-primary text-3xl sm:text-5xl">WHAT OUR CLIENTS SAY</h2>
+			<p class="mt-4 text-sm sm:text-base">
+				We're proud to have worked with so many amazing creators.
+			</p>
 		</div>
 		<div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
 			<AngledContainer isBlur background="bg-white/10" border="bg-neutral-200/10">
 				<div class="flex h-full flex-col justify-between p-4">
-					<p class="mt-2 text-white">
+					<p class="mt-2 text-sm text-white sm:text-base">
 						“They work very professionally and have a lot of experience. One of the best offers for
 						larger servers. Maybe a little too professional for my little server 😂, I'm very
 						satisfied!”
@@ -192,15 +194,15 @@
 							height="100"
 						/>
 						<div>
-							<p class="font-pixel">d4undranzigste</p>
-							<p class="text-neutral-300">Owner - Blocktopia</p>
+							<p class="font-pixel text-sm sm:text-base">d4undranzigste</p>
+							<p class="text-sm text-neutral-300 sm:text-base">Owner - Blocktopia</p>
 						</div>
 					</div>
 				</div>
 			</AngledContainer>
 			<AngledContainer isBlur background="bg-white/10" border="bg-neutral-200/10">
 				<div class="flex h-full flex-col justify-between p-4">
-					<p class="mt-2 text-white">
+					<p class="mt-2 text-sm text-white sm:text-base">
 						“Absolut amazing banner for this price!! will come back soon with new orders :)”
 					</p>
 
@@ -214,15 +216,15 @@
 							height="100"
 						/>
 						<div>
-							<p class="font-pixel">Janthox</p>
-							<p class="text-neutral-300">YouTuber</p>
+							<p class="font-pixel text-sm sm:text-base">Janthox</p>
+							<p class="text-sm text-neutral-300 sm:text-base">YouTuber</p>
 						</div>
 					</div>
 				</div>
 			</AngledContainer>
 			<AngledContainer isBlur background="bg-white/10" border="bg-neutral-200/10">
 				<div class="flex h-full flex-col justify-between p-4">
-					<p class="mt-2 text-white">
+					<p class="mt-2 text-sm text-white sm:text-base">
 						“The design exceeded all my expectations. Every comment was implemented down to the
 						smallest detail. Delivery was quick and uncomplicated. If I need additional designs,
 						I'll contact him directly.”
@@ -238,8 +240,8 @@
 							height="100"
 						/>
 						<div>
-							<p class="font-pixel">Minelodon</p>
-							<p class="text-neutral-300">Streamer</p>
+							<p class="font-pixel text-sm sm:text-base">Minelodon</p>
+							<p class="text-sm text-neutral-300 sm:text-base">Streamer</p>
 						</div>
 					</div>
 				</div>
@@ -260,8 +262,8 @@
 <!-- FAQs -->
 <section id="faq" class="container mx-auto max-w-7xl px-4 py-40">
 	<div class="text-center">
-		<h2 class="font-pixel text-primary text-5xl">FREQUENTLY ASKED QUESTIONS</h2>
-		<p class="mt-4">
+		<h2 class="font-pixel text-primary text-3xl sm:text-5xl">FREQUENTLY ASKED QUESTIONS</h2>
+		<p class="mt-4 text-sm sm:text-base">
 			Got questions? We've got answers. If you don't see your question here, feel free to reach out.
 		</p>
 	</div>
@@ -271,7 +273,7 @@
 				<div class="flex h-full flex-col justify-between">
 					<button class="cursor-pointer" onclick={() => (openIndex = openIndex === i ? null : i)}>
 						<div class="flex items-center justify-between">
-							<p class="text-lg font-semibold text-white">{faq.question}</p>
+							<p class="text-left text-base font-semibold text-white sm:text-lg">{faq.question}</p>
 							<RiAddFill
 								class={[
 									openIndex === i ? 'rotate-45' : 'rotate-0',
@@ -281,7 +283,7 @@
 						</div>
 					</button>
 					{#if openIndex === i}
-						<p class="mt-4 text-neutral-300">{faq.answer}</p>
+						<p class="mt-4 text-sm text-neutral-300 sm:text-base">{faq.answer}</p>
 					{/if}
 				</div>
 			</AngledContainer>
@@ -293,7 +295,7 @@
 <!-- CTA -->
 <section id="cta" class="relative">
 	<div class="container mx-auto max-w-7xl px-4">
-		<div class="grid grid-cols-1 place-items-center gap-12 md:grid-cols-3">
+		<div class="grid grid-cols-1 place-items-center pb-8 sm:gap-12 sm:pb-0 md:grid-cols-3">
 			<enhanced:img
 				src="$lib/assets/images/586.png"
 				alt="Call to Action"
@@ -305,8 +307,10 @@
 			<div class="col-span-2">
 				<AngledContainer isAnimated={false}>
 					<div class=" flex flex-col items-center justify-center gap-4 p-4 text-center">
-						<h2 class="font-pixel text-primary text-4xl">READY TO START YOUR PROJECT?</h2>
-						<p class="mb-4">
+						<h2 class="font-pixel text-primary text-2xl sm:text-4xl">
+							READY TO START YOUR PROJECT?
+						</h2>
+						<p class="mb-4 text-sm sm:text-base">
 							Let's build something amazing together. We're ready to bring your ideas to life.
 						</p>
 						<a
