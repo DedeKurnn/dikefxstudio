@@ -1,7 +1,13 @@
 <header class="sticky top-0 z-50 w-full bg-neutral-950 px-4">
 	<nav class="container mx-auto flex max-w-7xl items-center justify-between *:cursor-pointer">
 		<a href="/" class="flex items-center gap-2 py-4">
-			<enhanced:img src="$lib/assets/images/logo.png" alt="Logo" width="50" height="50" />
+			<enhanced:img
+				src="$lib/assets/images/logo.png"
+				class="h-10 w-10"
+				alt="Logo"
+				width="640"
+				height="640"
+			/>
 			<span class="font-pixel text-xl">DIKEFX</span>
 		</a>
 		<ul class="hidden items-center gap-6 sm:flex">
